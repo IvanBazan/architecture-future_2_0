@@ -1,6 +1,6 @@
 ---
 title: "Snowflake"
-ring: trial
+ring: assess
 quadrant: tools
 tags: [new]
 ---

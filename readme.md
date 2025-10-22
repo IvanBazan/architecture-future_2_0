@@ -184,3 +184,19 @@ BLOB данные, которые судя по всему также храни
 
 ##### Технологический радар:
 
+Реализован технологический радар на основе решения от AOE:
+https://github.com/AOEpeople/aoe_technology_radar
+
+Для запуска требуется NodeJs
+
+```bash
+cd Task3/tech_radar
+
+npm install 
+
+npm run build
+npm run serve 
+```
+радар будет доступен на `localhost:3000`
+
+

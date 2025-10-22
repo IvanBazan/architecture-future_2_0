@@ -1,6 +1,6 @@
 ---
 title: "Microservices"
-ring: adopt
+ring: trial
 quadrant: methods-and-patterns
 tags: [new]
 ---

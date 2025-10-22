@@ -1,6 +1,6 @@
 ---
 title: "Postgres"
-ring: adopt
+ring: trial
 quadrant: tools
 tags: [new]
 ---

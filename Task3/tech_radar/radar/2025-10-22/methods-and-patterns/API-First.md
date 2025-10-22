@@ -1,6 +1,6 @@
 ---
 title: "API-First"
-ring: adopt
+ring: assess
 quadrant: methods-and-patterns
 tags: [new]
 ---

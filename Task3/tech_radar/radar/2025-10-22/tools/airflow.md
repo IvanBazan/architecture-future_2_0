@@ -1,6 +1,6 @@
 ---
 title: "Apache Airflow"
-ring: adopt
+ring: trial
 quadrant: tools
 tags: [new]
 ---
