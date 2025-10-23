@@ -1,0 +1,243 @@
+{
+  "version": 4,
+  "terraform_version": "1.13.4",
+  "serial": 12,
+  "lineage": "2bc19ba7-f443-06af-6a2a-6f11922e7bff",
+  "outputs": {
+    "connection_string": {
+      "value": "postgresql://finance_admin:password@rc1a-ditmo4jr55he8i1h.mdb.yandexcloud.net:6432/finance_oltp",
+      "type": "string",
+      "sensitive": true
+    },
+    "database_disk_size": {
+      "value": 10,
+      "type": "number"
+    },
+    "database_host": {
+      "value": "rc1a-ditmo4jr55he8i1h.mdb.yandexcloud.net",
+      "type": "string"
+    },
+    "database_name": {
+      "value": "finance_oltp",
+      "type": "string"
+    },
+    "database_port": {
+      "value": 6432,
+      "type": "number"
+    },
+    "environment": {
+      "value": "development",
+      "type": "string"
+    }
+  },
+  "resources": [
+    {
+      "mode": "data",
+      "type": "yandex_vpc_network",
+      "name": "default",
+      "provider": "provider[\"registry.terraform.io/yandex-cloud/yandex\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "created_at": "2025-10-22T22:58:55Z",
+            "default_security_group_id": "enp81jc6lq26l62b1qd2",
+            "description": "Auto-created network",
+            "folder_id": "b1gcghcm3clk2fd63b8s",
+            "id": "enpl367586rv8lnibmk1",
+            "labels": {},
+            "name": "default",
+            "network_id": "enpl367586rv8lnibmk1",
+            "subnet_ids": [
+              "e2lqkheitg09d899ojmv",
+              "e9b8go0pj2iok50oin93",
+              "fl8ogvhla6sf4phpsvlf"
+            ]
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0
+        }
+      ]
+    },
+    {
+      "mode": "data",
+      "type": "yandex_vpc_subnet",
+      "name": "default_subnet",
+      "provider": "provider[\"registry.terraform.io/yandex-cloud/yandex\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "created_at": "2025-10-22T22:58:56Z",
+            "description": "Auto-created default subnet for zone ru-central1-a in default",
+            "dhcp_options": [],
+            "folder_id": "b1gcghcm3clk2fd63b8s",
+            "id": "e9b8go0pj2iok50oin93",
+            "labels": {},
+            "name": "default-ru-central1-a",
+            "network_id": "enpl367586rv8lnibmk1",
+            "route_table_id": "",
+            "subnet_id": "e9b8go0pj2iok50oin93",
+            "v4_cidr_blocks": [
+              "10.128.0.0/24"
+            ],
+            "v6_cidr_blocks": [],
+            "zone": "ru-central1-a"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "yandex_mdb_postgresql_cluster",
+      "name": "finance_oltp",
+      "provider": "provider[\"registry.terraform.io/yandex-cloud/yandex\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "config": [
+              {
+                "access": [
+                  {
+                    "data_lens": false,
+                    "data_transfer": false,
+                    "serverless": false,
+                    "web_sql": false
+                  }
+                ],
+                "autofailover": true,
+                "backup_retain_period_days": 7,
+                "backup_window_start": [
+                  {
+                    "hours": 0,
+                    "minutes": 0
+                  }
+                ],
+                "disk_size_autoscaling": [
+                  {
+                    "disk_size_limit": 0,
+                    "emergency_usage_threshold": 0,
+                    "planned_usage_threshold": 0
+                  }
+                ],
+                "performance_diagnostics": [
+                  {
+                    "enabled": false,
+                    "sessions_sampling_interval": 60,
+                    "statements_sampling_interval": 600
+                  }
+                ],
+                "pooler_config": [],
+                "postgresql_config": {
+                  "shared_preload_libraries": ""
+                },
+                "resources": [
+                  {
+                    "disk_size": 10,
+                    "disk_type_id": "network-ssd",
+                    "resource_preset_id": "s2.micro"
+                  }
+                ],
+                "version": "14"
+              }
+            ],
+            "created_at": "2025-10-23T01:23:36Z",
+            "database": [],
+            "deletion_protection": false,
+            "description": "",
+            "disk_encryption_key_id": null,
+            "environment": "PRESTABLE",
+            "folder_id": "b1gcghcm3clk2fd63b8s",
+            "health": "HEALTH_UNKNOWN",
+            "host": [
+              {
+                "assign_public_ip": false,
+                "fqdn": "rc1a-ditmo4jr55he8i1h.mdb.yandexcloud.net",
+                "name": "",
+                "priority": 0,
+                "replication_source": "",
+                "replication_source_name": "",
+                "role": "MASTER",
+                "subnet_id": "e9b8go0pj2iok50oin93",
+                "zone": "ru-central1-a"
+              }
+            ],
+            "host_group_ids": [],
+            "host_master_name": "",
+            "id": "c9qcsj8tdnjb83qf3dpp",
+            "labels": {},
+            "maintenance_window": [
+              {
+                "day": "",
+                "hour": 0,
+                "type": "ANYTIME"
+              }
+            ],
+            "name": "finance-oltp-development",
+            "network_id": "enpl367586rv8lnibmk1",
+            "restore": [],
+            "security_group_ids": [],
+            "status": "RUNNING",
+            "timeouts": null,
+            "user": []
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjkwMDAwMDAwMDAwMCwidXBkYXRlIjozNjAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "data.yandex_vpc_network.default",
+            "data.yandex_vpc_subnet.default_subnet"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "yandex_mdb_postgresql_database",
+      "name": "finance_oltp_db",
+      "provider": "provider[\"registry.terraform.io/yandex-cloud/yandex\"]",
+      "instances": [
+        {
+          "status": "tainted",
+          "schema_version": 0,
+          "attributes": {
+            "cluster_id": "c9qcsj8tdnjb83qf3dpp",
+            "deletion_protection": "unspecified",
+            "extension": [],
+            "id": "c9qcsj8tdnjb83qf3dpp:finance_oltp",
+            "lc_collate": "C",
+            "lc_type": "C",
+            "name": "finance_oltp",
+            "owner": "finance_admin",
+            "template_db": null,
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6NjAwMDAwMDAwMDAwLCJyZWFkIjo2MDAwMDAwMDAwMCwidXBkYXRlIjo2MDAwMDAwMDAwMDB9fQ==",
+          "dependencies": [
+            "data.yandex_vpc_network.default",
+            "data.yandex_vpc_subnet.default_subnet",
+            "yandex_mdb_postgresql_cluster.finance_oltp"
+          ]
+        }
+      ]
+    }
+  ],
+  "check_results": [
+    {
+      "object_kind": "var",
+      "config_addr": "var.environment",
+      "status": "pass",
+      "objects": [
+        {
+          "object_addr": "var.environment",
+          "status": "pass"
+        }
+      ]
+    }
+  ]
+}
